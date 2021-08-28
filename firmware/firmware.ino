@@ -11,7 +11,7 @@ const char* buadRatesCode[6]= {"D5", "4C", "24", "10", "06", "01"};
 const bool buadRatesEcho[6]= {true, true, false, false, false, false};
 
 void setup() {
-  pinMode(2, INPUT);
+  pinMode(2, INPUT_PULLUP);
   Serial.begin(115200);
   sss.begin(buadRates[baudIdx]);
 }
@@ -19,7 +19,7 @@ void setup() {
 void loop() {
 
   if (digitalRead(2) == LOW)
-    _reboot_Teensyduino_();
+   _reboot_Teensyduino_();
     
   if (Serial.available()) 
   {      
